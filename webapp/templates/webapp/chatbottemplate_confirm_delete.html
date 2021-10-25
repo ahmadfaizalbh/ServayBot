@@ -1,0 +1,8 @@
+{% extends '../base.html' %}
+
+{% block main_content %}
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete Chatbot template "{{ object.name }}"?</p>
+    <input class="btn btn-danger" type="submit" value="Confirm">
+</form>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends './chatbottemplate_render.html' %}
+
+{% load jsonify %}
+
+{% block handler %}
+    <form id="data_form" action="" method="post">
+        {% csrf_token %}
+        <label for="name">Name: </label>
+        <input id="name" name="name" placeholder="Please Enter Name" maxlength="30" value="{{object.name}}">
+        <textarea id="id_messages" name="messages" style="display: none;">{{ object.messages|jsonify }}</textarea>
+        <input class="btn btn-primary" type="submit" value="Save">
+    </form>
+{% endblock %}
+
+{% block modals %}
+<div class="modal fade" id="tagModel" tabindex="-1" role="dialog" aria-labelledby="PrevMessages" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="PrevMessages">Select Choice</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body list list-row card viewonly_list" id="tagModelBody">
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="ErrorModel" tabindex="-1" role="dialog" aria-labelledby="ErrorMessages" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ErrorMessages">Errors</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body list list-row card viewonly_list" id="ErrorModelBody">
+          </div>
+          <div class="modal-footer">
+            <div>Are you sure you want to continue?</div>
+            <div><button id="errorCancelBTN" class="btn btn-default">Cancel</button><button id="errorContinueBTN" class="btn btn-primary">Yes</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script>
+      $("#template_create_menu").addClass("active");
+  </script>
+
+  {% endblock %}

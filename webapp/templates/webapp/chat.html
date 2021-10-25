@@ -1,0 +1,38 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/chat.css' %}">
+<script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}
+{% block main_content %}
+<h1>Welcome to {{template.name}}</h1>
+
+<template id="choice">
+    <li class="choice" data-choice-id="{{ forloop.counter0 }}">
+    </li>
+</template>
+<template id="message_block">
+    <div class="message_block">
+        <div class="message">
+        </div>
+        <ol type="a" class="choices">
+        </ol>
+    </div>
+</template>
+<div id="chat_block">
+{% for message in messages %}
+    <div class="message_block {% if message.bot %}bot{% else %}client{% endif %}">
+        <div class="message">
+            {{message.message.message|safe}}
+        </div>
+        <ol type="a" class="choices">
+            {% for choice in message.message.choices %}
+            <li class="choice" data-choice-id="{{ forloop.counter0 }}">
+                {{choice|safe}}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+.nav.navbar-nav {
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.navbar > .container-fluid{
+    display: block;
+}
+</style>
+{% block header %}
+{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Servay Bot</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li id="home_menu"><a href="/">Home</a></li>
+            <li id="template_list_menu"><a href="{% url 'chatbottemplate:list' %}">Templates</a></li>
+            <li id="template_create_menu"><a href="{% url 'chatbottemplate:new' %}">Add Template</a></li>
+          </ul>
+        </div>
+      </nav>
+<div class="container">
+{% block main_content %}
+{% endblock %}
+</div>
+</body>
+</html> 

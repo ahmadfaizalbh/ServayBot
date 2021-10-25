@@ -1,0 +1,268 @@
+
+body {
+    background-color: #f9f9fa
+}
+.flex {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+@media (max-width:991.98px) {
+    .padding {
+        padding: 1.5rem
+    }
+}
+@media (max-width:767.98px) {
+    .padding {
+        padding: 1rem
+    }
+}
+.padding {
+    padding: 5rem
+}
+.card {
+    background: #fff;
+    border-width: 0;
+    border-radius: .25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+    margin-bottom: 1.5rem
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(19, 24, 44, .125);
+    border-radius: .25rem
+}
+.list-item {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word
+}
+.list-item.block .media {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0
+}
+.list-item.block .list-content {
+    padding: 1rem
+}
+.w-40 {
+    width: 40px !important;
+    height: 40px !important
+}
+.avatar {
+    position: relative;
+    line-height: 1;
+    border-radius: 500px;
+    white-space: nowrap;
+    font-weight: 700;
+    border-radius: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    border-radius: 500px;
+    box-shadow: 0 5px 10px 0 rgba(50, 50, 50, .15)
+}
+.avatar img {
+    border-radius: inherit;
+    width: 100%
+}
+.gd-primary {
+    color: #fff;
+    border: none;
+    background: #448bff linear-gradient(45deg, #448bff, #44e9ff)
+}
+.flex {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+.text-color {
+    color: #5e676f
+}
+.text-sm {
+    font-size: .825rem
+}
+.h-1x {
+    height: 1.25rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+.no-wrap {
+    white-space: nowrap
+}
+.list-row .list-item {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .75rem .625rem
+}
+.list-item {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word
+}
+.list-row .list-item>* {
+    padding-left: .625rem;
+    padding-right: .625rem
+}
+.dropdown {
+    position: relative
+}
+a:focus,
+a:hover {
+    text-decoration: none
+}
+.list-item {
+    background: white;
+    display: list-item;
+    list-style: inside numeric;
+    border: 1px solid #EEE;
+}
+.message{
+    position: relative;
+    display: inline-flex;
+    width: calc(100% - 50px);
+    float: right;
+
+}
+.choice {
+    background: #EEEEEE82;
+    padding: 5px;
+    margin: 2px;
+}
+.choices {
+    padding-left: 0px;
+}
+.choice-text {
+    width: calc(100% - 50px);
+    display: inline-block;
+    cursor: text;
+}
+.message-text {
+    cursor: text;
+    width: calc(100% - 25px);
+    margin-bottom: 5px;
+}
+.close.close-message{
+    float:right;
+    margin-top: -3px;
+    margin-right: -10px;
+    font-size: 16px;
+}
+.close.close-choice {
+    font-size: 16px;
+    margin: 3px;
+}
+.material-icons.add-tag-icon {
+    background-color: #007bff;
+    border-radius: 6px;
+    font-size: 9px;
+    color: white;
+    line-height: 9px;
+    font-weight: bold;
+    padding-right: 2px;
+    cursor: pointer;
+}
+#messages {
+    width: 100%;
+}
+.message-text:empty:not(:focus):before, .choice-text:empty:not(:focus):before, .tag-text:empty:not(:focus):before {
+    content:attr(data-placeholder);
+    color:#5e676f;
+}
+.material-icons.close.close-tag {
+    font-size: 10px;
+    padding: 1px;
+    background-color: white;
+    margin: 2px;
+    border-radius: 9px;
+    border: 1px solid #AAA;
+}
+.tag {
+    font-size: 10px;
+    display: inline-block;
+    background-color: #EEE;
+    padding: 1px 1px 1px 6px;
+    border-radius: 12px;
+    border: 1px solid #AAA;
+}
+.tag-text {
+    cursor: text;
+    min-width: 15px;
+    display: inline-block;
+}
+.tags {
+    display: inline;
+}
+.add-tag{
+    cursor: pointer;
+}
+#tagModelBody:empty:not(:focus):before{
+    content:"No Quetion befor it";
+}
+.viewonly_list .close, .viewonly_list button, .viewonly_list .sort-icon, .viewonly_list .add-tag-icon {
+    display: none;
+}
+.viewonly_list *{
+    cursor: default;
+}
+.viewonly_list .selectable-message .choice, .viewonly_list .selectable-message .choice-text{
+    cursor: pointer;
+}
+.viewonly_list .tag{
+    padding: 1px 6px 1px 6px;
+}
+.list-item.selected-message::after {
+    content: "selected: " attr(data-choice);
+    color: green;
+}
+.selected-message {
+    background: #BBB;
+}
+.selectable-message{
+    background: white !important;
+}
+.material-icons.selected {
+    font-size: 12px;
+    font-weight: bold;
+    color: green;
+    margin-left: -10px;
+}
+.error {
+    color: #dc3545;
+    font-size: 12px;
+    background: #dc453547;
+    padding: 0px 5px;
+    border-radius: 3px;
+}
+.error:empty{
+    display: none;
+}
+.viewonly_list .btn-add-message{
+    display: none;
+}
+.choice-text img, .message-text img {
+    max-width: 500px;
+    max-height: 300px;
+}

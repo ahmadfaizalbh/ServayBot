@@ -1,0 +1,60 @@
+.message_block .message img, .message_block .choice img {
+    max-width: 500px;
+    max-height: 300px;
+  }
+.message_block .choice{
+    min-width: 530px;
+    width: 530px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 3px rgba(61, 61, 61, 0.411);
+    border: 1px solid rgb(61, 61, 61);
+    margin-top: 7px;
+}
+.message_block{
+    border:1px solid rgb(61, 61, 61);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+    min-width: 600px;
+}
+.message_block.bot{
+    float:right;
+    background-color: #EEEE;
+}
+.message_block.client{
+    float:left;
+    background-color: rgb(175, 213, 231);
+}
+.message_block .message, .message_block .choice{
+    background-color: white;
+    padding: 5px;
+}
+.message_block:last-child .choice:hover {
+    box-shadow: 1px 1px 0px 0px rgba(173, 216, 230, 0.411);
+}
+.message_block:last-child .choice {
+    box-shadow: 1px 1px 1px 3px rgba(173, 216, 230, 0.411);
+    border: 1px solid lightblue;
+    cursor: pointer;
+}
+#chat_block{
+    width: 800px;
+    border: 1px solid black;
+    height: calc(100vh - 160px);
+    overflow: auto;
+}
+.bot .message::before {
+    content: "Bot:";
+    position: absolute;
+    margin-top: -35px;
+}
+.client .message::before {
+    content: "You:";
+    position: absolute;
+    margin-top: -35px;
+}
+.message{
+    margin-top: 35px;
+    position: relative;
+}

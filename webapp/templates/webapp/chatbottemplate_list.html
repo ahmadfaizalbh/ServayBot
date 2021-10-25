@@ -1,0 +1,41 @@
+{% extends '../base.html' %}
+
+{% block main_content %}
+<style>
+    .action-icons a{
+        margin: 10px;
+
+    }
+</style>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Published</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for object in object_list %}
+      <tr>
+        <th scope="row">{{object.id}}</th>
+        <td>{{object.name}}</td>
+        <td>{{object.published}}</td>
+        <td class="action-icons">
+            <a href="{% url 'chatbottemplate:detail' pk=object.pk %}"><i class="material-icons" title="View">visibility</i></a>
+            {% if object.published %}
+            <a href="{% url 'chat' pk=object.pk name=object.name %}"><i class="material-icons" title="Open Chat">question_answer</i></a>
+            {% else %}
+            <a href="{% url 'chatbottemplate:update' pk=object.pk %}"><i class="material-icons" title="Edit">edit</i></a>
+            <a href="{% url 'chatbottemplate:publish' pk=object.pk %}"><i class="material-icons" title="Publish">publish</i></a>
+            <a href="{% url 'chatbottemplate:delete' pk=object.pk %}"><i class="material-icons" title="delete">delete_forever</i></a>
+            {% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+<script>
+    $("#template_list_menu").addClass("active");
+</script>
+{% endblock %}

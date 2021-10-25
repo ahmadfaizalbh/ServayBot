@@ -1,0 +1,54 @@
+{% extends '../base.html' %}
+{% load static %}
+{% load jsonify %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/chattemplate.css' %}">
+<script src="{% static 'js/chattemplate.js' %}"></script>
+{% endblock %}
+
+{% block main_content %}
+    <template id="tag">
+        <span class="tag"><span class="tag-text" data-placeholder="Choice Code"></span><i class="material-icons close close-tag">close</i></span>
+    </template>
+    <template id="message">
+        <div class="list-item">
+            <span class="sort-icon ui-icon ui-icon-arrowthick-2-n-s"></span>
+            <div class="message">
+                <div class="flex">
+                     <i class="material-icons close close-message">close</i>
+                     <div class="item-author text-color message-text" data-placeholder="Enter Message"></div>
+                     <span class="error message-error"></span>
+                     <div class="if-tags"><span class="add-tag">IF <i class="material-icons add-tag-icon">add</i></span> <div class="tags"></div></div>
+                     <ol type="a" class="choices"></ol>
+                     <button class="btn btn-sm btn-primary btn-add-choice">Add choice</button>
+                </div>
+            </div>
+        </div> 
+    </template>
+    <template id="choice">
+        <li class="choice">
+            <span class="choice-text" data-placeholder="Enter choice"></span>
+            <i class="material-icons close close-choice">close</i>
+            <span class="error choice-error"></span>
+        </li>
+    </template>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row">
+            <div class="col-sm-8">
+                <span id="name-error" class="error"></span>
+                {% block handler %}{% endblock %}
+                <h3>Message Blocks</h3>
+                <div class="container-fluid d-flex justify-content-center">
+                    <div id="messages" class="list list-row card {% block list_classes %}{% endblock %}" aria-dropeffect="move">
+                        <button class="btn btn-sm btn-primary btn-add-message">Add Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block modals %}{% endblock %}
+{% endblock %}

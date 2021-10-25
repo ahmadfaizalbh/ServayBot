@@ -1,0 +1,20 @@
+{% extends './chatbottemplate_render.html' %}
+
+{% load jsonify %}
+
+{% block handler %}
+    <label for="name">Name: <span>{{object.name}}</span></label>
+    <textarea id="id_messages" name="messages" style="display: none;">{{ object.messages|jsonify }}</textarea>
+   
+    <span style="float:right">
+    {% if object.published %}
+    <span>Published</span>
+    <a href="{% url 'chat' pk=object.pk name=object.name %}"><input class="btn btn-primary" type="button" value="Chat"></a>
+    {% else %}
+    <a href="{% url 'chatbottemplate:delete' pk=object.pk %}"><input class="btn btn-danger" type="button" value="Delete"></a>
+    <a href="{% url 'chatbottemplate:update' pk=object.pk %}"><input class="btn btn-primary" type="button" value="Update"></a>
+    <a href="{% url 'chatbottemplate:publish' pk=object.pk %}"><input class="btn btn-primary" type="button" value="Publish"></a>
+    {% endif %}
+    </span>
+{% endblock %}
+{% block list_classes %}viewonly_list{% endblock %}
